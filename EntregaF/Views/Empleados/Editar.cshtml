@@ -1,0 +1,53 @@
+﻿@model Empleados
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<div class="card">
+    <div class="card-header">
+        Editar informacion del empleado
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Empleado" method="post"></form>
+        <input asp-for="EMPLEADOS_CODIGO" type="hidden" class="form-control" />
+
+    <div class="mb-3">
+        <label class="form-label">Codigo empleados</label>
+        <input asp-for="EMPLEADOS_CODIGO" type="text" class="form-control" />
+        <span asp-validation-for="EMPLEADOS_CODIGO" class="text-denger"></span>
+    </div>
+        
+    <div class="mb-3">
+        <label class="form-label">Tipo empleado</label>
+        <input asp-for="TIPO_EMPLEADO" type="email" class="form-control" />
+        <span asp-validation-for="TIPO_EMPLEADO" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Apellido supervisor</label>
+        <input asp-for="APELLIDO_SUPERVISOR" type="text" class="form-control" />
+        <span asp-validation-for="APELLIDO_SUPERVISOR" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="NOMBRE" type="number" class="form-control" />
+        <span asp-validation-for="NOMBRE" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input asp-for="APELLIDO" type="text" class="form-control" />
+        <span asp-validation-for="APELLIDO" class="text-denger"></span>
+    </div>
+        <div class="mb-3">
+        <label class="form-label">Usuarios codigo</label>
+        <input asp-for="USUARIOS_CODIGO" type="text" class="form-control" />
+        <span asp-validation-for="USUARIOS_CODIGO" class="text-denger"></span>
+        </div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+        <a asp-action="Listar" asp-controller="Empleados" class="btn btn-warning">Volver al listado</a>
+    </div>
+</div>

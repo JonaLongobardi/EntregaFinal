@@ -1,0 +1,38 @@
+﻿@model Ordenes
+@{
+    ViewData["Title"] = "GuardarForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GuardarForm</h1>
+
+<form>
+    <div class="mb-3">
+        <label class="form-label">Codigo orden</label>
+        <input asp-for="ORDENES_COD" type="number" class="form-control" />
+        <span asp-validation-for="ORDENES_COD" class="text-denger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Vendedor</label>
+        <input asp-for="VENDEDOR" type="text" class="form-control" />
+        <span asp-validation-for="VENDEDOR" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha de entrega</label>
+        <input asp-for="FECHA_ENTREGA" type="text" class="form-control" />
+        <span asp-validation-for="FECHA_ENTREGA" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Codigo de clientes</label>
+        <input asp-for="CLIENTES_COD" type="number" class="form-control" />
+        <span asp-validation-for="CLIENTES_COD" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Codigo de empleados</label>
+        <input asp-for="EMPLEADOS_COD" type="number" class="form-control" />
+        <span asp-validation-for="EMPLEADOS_COD" class="text-denger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Listar" asp-controller="Ordenes" class="btn btn-warning">Volver al listado</a>
+</form>

@@ -1,0 +1,47 @@
+﻿@model Ordenes
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+<div class="card">
+    <div class="card-header">
+        Editar informacion del empleado
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Ordenes" method="post"></form>
+        <input asp-for="ORDENES_COD" type="hidden" class="form-control" />
+
+        <div class="mb-3">
+            <label class="form-label">Codigo ordenes</label>
+            <input asp-for="ORDENES_COD" type="text" class="form-control" />
+            <span asp-validation-for="ORDENES_COD" class="text-denger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Vendedor</label>
+            <input asp-for="VENDEDOR" type="text" class="form-control" />
+            <span asp-validation-for="VENDEDOR" class="text-denger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha de entrega</label>
+            <input asp-for="FECHA_ENTREGA" type="text" class="form-control" />
+            <span asp-validation-for="FECHA_ENTREGA" class="text-denger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Codigo de clientes</label>
+            <input asp-for="CLIENTES_COD" type="number" class="form-control" />
+            <span asp-validation-for="CLIENTES_COD" class="text-denger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Codigo de empleado</label>
+            <input asp-for="EMPLEADOS_COD" type="number" class="form-control" />
+            <span asp-validation-for="EMPLEADOS_COD" class="text-denger"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <a asp-action="Listar" asp-controller="Clientes" class="btn btn-warning">Volver al listado</a>
+        </div>
+    </div>
+</div>

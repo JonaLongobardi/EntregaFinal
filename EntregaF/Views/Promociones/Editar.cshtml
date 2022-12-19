@@ -1,0 +1,38 @@
+﻿@model Promociones
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Editar</h1>
+
+<div class="card">
+    <div class="card-header">
+        Editar informacion de promociones
+    </div>
+    <div class="card-body">
+        <form asp-action="Editar" asp-controller="Promociones" method="post"></form>
+        <input asp-for="PROMOCIONES_COD" type="hidden" class="form-control" />
+
+        <div class="mb-3">
+            <label class="form-label">Codigo promocion</label>
+            <input asp-for="PROMOCIONES_COD" type="number" class="form-control" />
+            <span asp-validation-for="PROMOCIONES_COD" class="text-denger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input asp-for="NOMBRE" type="text" class="form-control" />
+            <span asp-validation-for="NOMBRE" class="text-denger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descuento</label>
+            <input asp-for="DESCUENTO" type="number" class="form-control" />
+            <span asp-validation-for="DESCUENTO" class="text-denger"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <a asp-action="Listar" asp-controller="Productos" class="btn btn-warning">Volver al listado</a>
+        </div>
+    </div>
+</div>
