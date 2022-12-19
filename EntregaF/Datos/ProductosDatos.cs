@@ -25,6 +25,7 @@ namespace EntregaF.Datos
                         oLista.Add(new Productos()
                         {
                             PRODUCTOS_COD = Convert.ToInt32(dr["PRODUCTOS_COD"]),
+                            PROVEEDORES_COD = Convert.ToInt32(dr["PROVEEDORES_COD"]),
                             NOMBRE = dr["NOMBRE"].ToString(),
                             PRECIO = Convert.ToInt32(dr["PRECIO"]),
                             STOCK = Convert.ToInt32(dr["STOCK"]),
@@ -52,6 +53,7 @@ namespace EntregaF.Datos
                     while (dr.Read())
                     {
                         oProductos.PRODUCTOS_COD = Convert.ToInt32(dr["PRODUCTOS_COD"]);
+                        oProductos.PROVEEDORES_COD = Convert.ToInt32(dr["PROVEEDORES_COD"]);
                         oProductos.NOMBRE = dr["NOMBRE"].ToString();
                         oProductos.PRECIO = Convert.ToInt32(dr["PRECIO"]);
                         oProductos.STOCK = Convert.ToInt32(dr["STOCK"]);
@@ -72,6 +74,7 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarPRODUCTOS", connection);
+                    cmd.Parameters.AddWithValue("PROVEEDORES_COD", oProductos.PROVEEDORES_COD);
                     cmd.Parameters.AddWithValue("NOMBRE", oProductos.NOMBRE);
                     cmd.Parameters.AddWithValue("PRECIO", oProductos.PRECIO);
                     cmd.Parameters.AddWithValue("STOCK", oProductos.STOCK);
@@ -97,6 +100,7 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarPRODUCTOS", connection);
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", oProductos.PRODUCTOS_COD);
+                    cmd.Parameters.AddWithValue("PROVEEDORES_COD", oProductos.PROVEEDORES_COD);
                     cmd.Parameters.AddWithValue("NOMBRE", oProductos.NOMBRE);
                     cmd.Parameters.AddWithValue("PRECIO", oProductos.PRECIO);
                     cmd.Parameters.AddWithValue("STOCK", oProductos.STOCK);

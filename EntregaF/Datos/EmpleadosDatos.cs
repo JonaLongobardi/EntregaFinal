@@ -23,11 +23,12 @@ namespace EntregaF.Datos
                     {
                         oLista.Add(new Empleados()
                         {
-                            EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_COD"]),
-                            TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]),
-                            APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString(),
+                            EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]),
                             NOMBRE = dr["NOMBRE"].ToString(),
                             APELLIDO = dr["APELLIDO"].ToString(),
+                            APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString(),
+                            TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]),
+                            USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]),
                         });
                     }
                 }
@@ -52,10 +53,11 @@ namespace EntregaF.Datos
                     while (dr.Read())
                     {
                         oEmpleados.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_COD"]);
-                        oEmpleados.TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]);
-                        oEmpleados.APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString();
                         oEmpleados.NOMBRE = dr["NOMBRE"].ToString();
                         oEmpleados.APELLIDO = dr["APELLIDO"].ToString();
+                        oEmpleados.APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString();
+                        oEmpleados.TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]);
+                        oEmpleados.USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]);
                     }
                 }
             }
@@ -73,10 +75,11 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarEMPLEADOS", connection);
-                    cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
-                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
                     cmd.Parameters.AddWithValue("NOMBRE", oEmpleados.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
+                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
+                    cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
                 }
                 respuesta = true;
             }
@@ -99,10 +102,11 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarEMPLEADOS", connection);
                     cmd.Parameters.AddWithValue("EMPLEADOS_CODIGO", oEmpleados.EMPLEADOS_CODIGO);
-                    cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
-                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
                     cmd.Parameters.AddWithValue("NOMBRE", oEmpleados.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
+                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
+                    cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
                 }
                 respuesta = true;
             }

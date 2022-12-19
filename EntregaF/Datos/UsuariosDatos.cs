@@ -90,7 +90,7 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarUSUARIOS", connection);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oUsuarios.USUARIOS_CODIGO);
-                    cmd.Parameters.AddWithValue("NOMBRE", oUsuarios.PERFILES_CODIGO);
+                    cmd.Parameters.AddWithValue("PERFILES_CODIGO", oUsuarios.PERFILES_CODIGO);
                 }
                 respuesta = true;
             }

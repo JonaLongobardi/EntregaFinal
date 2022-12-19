@@ -27,6 +27,9 @@ namespace EntregaF.Datos
                             ORDENES_COD = Convert.ToInt32(dr["ORDENES_COD"]),
                             FECHA_ENTREGA = dr["FECHA_ENTREGA"].ToString(),
                             VENDEDOR = dr["VENDEDOR"].ToString(),
+                            CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]),
+                            EMPLEADOS_COD = Convert.ToInt32(dr["EMPLEADOS_COD"]),
+
                         });
                     }
                 }
@@ -51,7 +54,10 @@ namespace EntregaF.Datos
                     while (dr.Read())
                     {
                         oOrdenes.ORDENES_COD = Convert.ToInt32(dr["ORDENES_COD"]);
+                        oOrdenes.VENDEDOR = dr["VENDEDOR"].ToString();
                         oOrdenes.FECHA_ENTREGA = dr["FECHA_ENTREGA"].ToString();
+                        oOrdenes.CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]);
+                        oOrdenes.EMPLEADOS_COD = Convert.ToInt32(dr["EMPLEADOS_COD"]);
                     }
                 }
             }
@@ -69,7 +75,10 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarORDENES", connection);
+                    cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
+                    cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_COD);
                 }
                 respuesta = true;
             }
@@ -92,7 +101,10 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarORDENES", connection);
                     cmd.Parameters.AddWithValue("ORDENES_COD", oOrdenes.ORDENES_COD);
+                    cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
+                    cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_COD);
                 }
                 respuesta = true;
             }

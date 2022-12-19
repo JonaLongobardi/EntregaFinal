@@ -24,7 +24,7 @@ namespace EntregaDef.Datos
                     {
                         oLista.Add(new Promociones()
                         {
-                            PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_CODIGO"]),
+                            PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_COD"]),
                             NOMBRE = dr["NOMBRE"].ToString(),
                             DESCUENTO = Convert.ToInt32(dr["DESCUENTO"]),
                         });
@@ -34,7 +34,7 @@ namespace EntregaDef.Datos
             return oLista;
         }
 
-        public Promociones Obtener(int PROMOCIONES_CODIGO)
+        public Promociones Obtener(int PROMOCIONES_COD)
         {
             var oPromociones = new Promociones();
             var cn = new Conexion();
@@ -43,14 +43,14 @@ namespace EntregaDef.Datos
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand("obtenerPROMOCIONES", connection);
-                cmd.Parameters.AddWithValue("PROMOCIONES_CODIGO", PROMOCIONES_CODIGO);
+                cmd.Parameters.AddWithValue("PROMOCIONES_COD", PROMOCIONES_COD);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        oPromociones.PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_CODIGO"]);
+                        oPromociones.PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_COD"]);
                         oPromociones.NOMBRE = dr["NOMBRE"].ToString();
                         oPromociones.DESCUENTO = Convert.ToInt32(dr["DESCUENTO"]);
                     }
@@ -93,7 +93,7 @@ namespace EntregaDef.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarPROMOCIONES", connection);
-                    cmd.Parameters.AddWithValue("PROMOCIONES_CODIGO", oPromociones.PROMOCIONES_COD);
+                    cmd.Parameters.AddWithValue("PROMOCIONES_COD", oPromociones.PROMOCIONES_COD);
                     cmd.Parameters.AddWithValue("NOMBRE", oPromociones.NOMBRE);
                     cmd.Parameters.AddWithValue("DESCUENTO", oPromociones.DESCUENTO);
                 }
@@ -106,7 +106,7 @@ namespace EntregaDef.Datos
             }
             return respuesta;
         }
-        public bool Eliminar(int PROMOCIONES_CODIGO)
+        public bool Eliminar(int PROMOCIONES_COD)
         {
             bool respuesta;
 
@@ -117,7 +117,7 @@ namespace EntregaDef.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("eliminarPROMOCIONES", connection);
-                    cmd.Parameters.AddWithValue("PROMOCIONES_CODIGO", PROMOCIONES_CODIGO);
+                    cmd.Parameters.AddWithValue("PROMOCIONES_COD", PROMOCIONES_COD);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

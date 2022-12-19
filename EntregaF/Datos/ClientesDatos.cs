@@ -25,12 +25,14 @@ namespace EntregaF.Datos
                         oLista.Add(new Clientes()
                         {
                             CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]),
+                            CORREO = dr["CORREO"].ToString(),
+                            CONTRASENIA = dr["CONTRASENIA"].ToString(),
+                            TIPO_CLIENTE = dr["TIPO_CLIENTE"].ToString(), 
+                            RAZON_SOCIAL = dr["RAZON_SOCIAL"].ToString(),
+                            CUIT_DNI = Convert.ToInt32(dr["CUIT_DNI"]),
                             NOMBRE = dr["NOMBRE"].ToString(),
                             APELLIDO = dr["APELLIDO"].ToString(),
-                            CORREO = dr["CORREO"].ToString(),
-                            TIPO_CLIENTE = dr["TIPO_CLIENTE"].ToString(),
-                            CUIT_DNI = Convert.ToInt32(dr["CUIT_DNI"]),
-                            RAZON_SOCIAL = dr["RAZON_SOCIAL"].ToString(),
+                            USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]),   
                         });
                     }
                 }
@@ -55,12 +57,15 @@ namespace EntregaF.Datos
                     while (dr.Read())
                     {
                         oClientes.CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]);
+                        oClientes.CORREO = dr["CORREO"].ToString();
+                        oClientes.CONTRASENIA = dr["CONTRASENIA"].ToString();
+                        oClientes.TIPO_CLIENTE = dr["TIPO_CLIENTE"].ToString();
+                        oClientes.RAZON_SOCIAL = dr["RAZON_SOCIAL"].ToString();
+                        oClientes.CUIT_DNI = Convert.ToInt32(dr["CUIT_DNI"]);
                         oClientes.NOMBRE = dr["NOMBRE"].ToString();
                         oClientes.APELLIDO = dr["APELLIDO"].ToString();
-                        oClientes.CORREO = dr["CORREO"].ToString();
-                        oClientes.TIPO_CLIENTE = dr["TIPO_CLIENTE"].ToString();
-                        oClientes.CUIT_DNI = Convert.ToInt32(dr["CUIT_DNI"]);
-                        oClientes.RAZON_SOCIAL = dr["RAZON_SOCIAL"].ToString();
+                        oClientes.USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]);
+
                     }
                 }
             }
@@ -78,12 +83,15 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarCLIENTES", connection);
+                    cmd.Parameters.AddWithValue("CORREO", oCliente.CORREO);
+                    cmd.Parameters.AddWithValue("CONTRASENIA", oCliente.CONTRASENIA);
+                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
+                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
                     cmd.Parameters.AddWithValue("NOMBRE", oCliente.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oCliente.APELLIDO);
-                    cmd.Parameters.AddWithValue("CORREO", oCliente.CORREO);
-                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
-                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
-                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oCliente.USUARIOS_CODIGO);
+                    
                 }
                 respuesta = true;
             }
@@ -106,12 +114,14 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarCLIENTES", connection);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oCliente.CLIENTES_COD);
+                    cmd.Parameters.AddWithValue("CORREO", oCliente.CORREO);
+                    cmd.Parameters.AddWithValue("CONTRASENIA", oCliente.CONTRASENIA);
+                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
+                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
                     cmd.Parameters.AddWithValue("NOMBRE", oCliente.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oCliente.APELLIDO);
-                    cmd.Parameters.AddWithValue("CORREO", oCliente.CORREO);
-                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
-                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
-                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oCliente.USUARIOS_CODIGO);
                 }
                 respuesta = true;
             }
