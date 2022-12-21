@@ -85,13 +85,14 @@ namespace EntregaF.Datos
                     SqlCommand cmd = new SqlCommand("guardarCLIENTES", connection);
                     cmd.Parameters.AddWithValue("CORREO", oCliente.CORREO);
                     cmd.Parameters.AddWithValue("CONTRASENIA", oCliente.CONTRASENIA);
-                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
-                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", "123");
+                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", "123");
                     cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
                     cmd.Parameters.AddWithValue("NOMBRE", oCliente.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oCliente.APELLIDO);
-                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oCliente.USUARIOS_CODIGO);
-                    
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", 1);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();    
                 }
                 respuesta = true;
             }

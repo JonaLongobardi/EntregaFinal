@@ -19,13 +19,9 @@ namespace EntregaF.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult GuardarForm(Clientes oCliente)
+        public IActionResult GuardarForm(Clientes datos)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
-            var respuesta = clientesDatos.Guardar(oCliente);
+            var respuesta = clientesDatos.Guardar(datos);
 
             if (respuesta)
             {
@@ -37,9 +33,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int CLIENTES_COD)
+        public IActionResult Editar(int id)
         {
-            var oCliente = clientesDatos.Obtener(CLIENTES_COD);
+            var oCliente = clientesDatos.Obtener(id);
 
             return View();
         }
@@ -62,9 +58,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int CLIENTES_COD)
+        public IActionResult Eliminar(int id)
         {
-            var oCliente = clientesDatos.Eliminar(CLIENTES_COD);
+            var oCliente = clientesDatos.Eliminar(id);
 
             return View();
         }
