@@ -11,23 +11,23 @@
         Editar informacion de usuario
     </div>
     <div class="card-body">
-        <form asp-action="Editar" asp-controller="Usuarios" method="post"></form>
+        <form asp-action="Editar" asp-controller="Usuarios" method="post">
         <input asp-for="USUARIOS_CODIGO" type="hidden" class="form-control" />
 
-        <div class="mb-3">
-            <label class="form-label">Codigo usuario</label>
-            <input asp-for="USUARIOS_CODIGO" type="number" class="form-control" />
-            <span asp-validation-for="USUARIOS_CODIGO" class="text-denger"></span>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Codigo perfil</label>
-            <input asp-for="PERFILES_CODIGO" type="number" class="form-control" />
-            <span asp-validation-for="PERFILES_CODIGO" class="text-denger"></span>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary">Editar</button>
-            <a asp-action="Listar" asp-controller="Usuarios" class="btn btn-warning">Volver al listado</a>
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="CORREO" type="text" class="form-control" />
+                <span asp-validation-for="CORREO" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input asp-for="CONTRASENIA" type="password" class="form-control" />
+                <span asp-validation-for="CONTRASENIA" class="text-denger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Usuarios">Editar</button>
+                <a asp-action="Listar" asp-controller="Usuarios" class="btn btn-warning">Volver al listado</a>
+            </div>
+        </form>
     </div>
 </div>

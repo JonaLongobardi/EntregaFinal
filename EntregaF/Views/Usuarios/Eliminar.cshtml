@@ -12,13 +12,13 @@
     </div>
     <div class="card-body">
         <form asp-action="Eliminar" asp-controller="Usuarios" method="post">
-            <input asp-for="USUARIOS_CODIGO" type="hidden" class="form-control" />
+        <input asp-for="USUARIOS_CODIGO" type="hidden" class="form-control" />
 
             <div class="alert alert-danger" role="alert">
                 ¿Desea eliminar el usuario: @Html.DisplayTextFor(m => m.USUARIOS_CODIGO)?
             </div>
 
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-primary" asp-action="Eliminar" asp-controller="Usuarios">Eliminar</button>
             <a asp-action="Listar" asp-controller="Usuarios" class="btn btn-warning">Volver al listado</a>
         </form>
     </div>

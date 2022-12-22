@@ -10,38 +10,33 @@
         Editar informacion del empleado
     </div>
     <div class="card-body">
-        <form asp-action="Editar" asp-controller="Ordenes" method="post"></form>
+        <form asp-action="Editar" asp-controller="Ordenes" method="post">
         <input asp-for="ORDENES_COD" type="hidden" class="form-control" />
 
-        <div class="mb-3">
-            <label class="form-label">Codigo ordenes</label>
-            <input asp-for="ORDENES_COD" type="text" class="form-control" />
-            <span asp-validation-for="ORDENES_COD" class="text-denger"></span>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Vendedor</label>
-            <input asp-for="VENDEDOR" type="text" class="form-control" />
-            <span asp-validation-for="VENDEDOR" class="text-denger"></span>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Fecha de entrega</label>
-            <input asp-for="FECHA_ENTREGA" type="text" class="form-control" />
-            <span asp-validation-for="FECHA_ENTREGA" class="text-denger"></span>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Codigo de clientes</label>
-            <input asp-for="CLIENTES_COD" type="number" class="form-control" />
-            <span asp-validation-for="CLIENTES_COD" class="text-denger"></span>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Codigo de empleado</label>
-            <input asp-for="EMPLEADOS_COD" type="number" class="form-control" />
-            <span asp-validation-for="EMPLEADOS_COD" class="text-denger"></span>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Ordenados">Editar</button>
-            <a asp-action="Listar" asp-controller="Clientes" class="btn btn-warning">Volver al listado</a>
-        </div>
+            <div class="mb-3">
+                <label class="form-label">Vendedor</label>
+                <input asp-for="VENDEDOR" type="text" class="form-control" />
+                <span asp-validation-for="VENDEDOR" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha de entrega</label>
+                <input asp-for="FECHA_ENTREGA" type="text" class="form-control" />
+                <span asp-validation-for="FECHA_ENTREGA" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Codigo de clientes</label>
+                <input asp-for="CLIENTES_COD" type="number" class="form-control" />
+                <span asp-validation-for="CLIENTES_COD" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Codigo de empleado</label>
+                <input asp-for="EMPLEADOS_CODIGO" type="number" class="form-control" />
+                <span asp-validation-for="EMPLEADOS_CODIGO" class="text-denger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Ordenados">Editar</button>
+                <a asp-action="Listar" asp-controller="Clientes" class="btn btn-warning">Volver al listado</a>
+            </div>
+        </form>
     </div>
 </div>

@@ -7,18 +7,6 @@
 <h1>GuardarForm</h1>
 <form asp-action="GuardarForm" asp-controller="Cliente">
     <div class="mb-3">
-        <label class="form-label">Correo</label>
-        <input asp-for="CORREO" type="text" class="form-control" id="correo"/>
-        <span asp-validation-for="CORREO" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Contraseña</label>
-        <input asp-for="CONTRASENIA" type="password" class="form-control" id="contrasenia"/>
-        <span asp-validation-for="CONTRASENIA" class="text-denger"></span>
-    </div>
-   
-
-    <div class="mb-3">
         <label class="form-label">Razon social</label>
         <input asp-for="RAZON_SOCIAL" type="text" class="form-control" id="razonSocial"/>
         <span asp-validation-for="RAZON_SOCIAL" class="text-denger"></span>
@@ -27,6 +15,16 @@
         <label class="form-label">CUIT</label>
         <input asp-for="CUIT_DNI" type="number" class="form-control" id="cuitDni"/>
         <span asp-validation-for="CUIT_DNI" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Tipo de cliente</label>
+        <input asp-for="TIPO_CLIENTE" type="text" class="form-control" id="cuitDni"/>
+        <span asp-validation-for="TIPO_CLIENTE" class="text-denger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Razon social</label>
+        <input asp-for="RAZON_SOCIAL" type="text" class="form-control" id="cuitDni" />
+        <span asp-validation-for="RAZON_SOCIAL" class="text-denger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label">Nombre</label>
@@ -39,7 +37,7 @@
         <span asp-validation-for="APELLIDO" class="text-denger"></span>
     </div>
     
-    <button class="btn btn-primary" asp-action="GuardarForm" asp-controller="Clientes">
+    <button class="btn btn-primary" asp-action="GuardarForm" asp-controller="Cliente">
         Guardar
     </button>
     <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>

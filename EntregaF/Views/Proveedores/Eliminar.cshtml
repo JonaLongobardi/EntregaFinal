@@ -18,7 +18,7 @@
                 ¿Desea eliminar al proveedor: @Html.DisplayTextFor(m => m.NOMBRE)?
             </div>
 
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-primary" asp-action="Eliminar" asp-controller="Proveedores">Eliminar</button>
             <a asp-action="Listar" asp-controller="Preveedores" class="btn btn-warning">Volver al listado</a>
         </form>
     </div>

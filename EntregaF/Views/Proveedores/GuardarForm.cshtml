@@ -6,12 +6,7 @@
 
 <h1>GuardarForm</h1>
 
-<form>
-    <div class="mb-3">
-        <label class="form-label">Codigo proveedor</label>
-        <input asp-for="PROVEEDORES_COD" type="number" class="form-control" />
-        <span asp-validation-for="PROVEEDORES_COD" class="text-denger"></span>
-    </div>
+<form asp-action="GuardarForm" asp-controller="Proveedores">
     <div class="mb-3">
         <label class="form-label">Nombre</label>
         <input asp-for="NOMBRE" type="text" class="form-control" />
@@ -27,6 +22,6 @@
         <input asp-for="CUIT" type="number" class="form-control" />
         <span asp-validation-for="CUIT" class="text-denger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary" asp-action="GuardarForm" asp-controller="Proveedores">Guardar</button>
     <a asp-action="Listar" asp-controller="Proveedores" class="btn btn-warning">Volver al listado</a>
 </form>
