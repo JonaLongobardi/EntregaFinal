@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using EntregaF.Models;
 using System.Data.SqlClient;
-using EntregaF.Datos;
+
 
 namespace EntregaF.Datos
 {
