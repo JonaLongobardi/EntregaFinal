@@ -38,9 +38,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int PROVEEDORES_COD)
+        public IActionResult Editar(int id)
         {
-            var oProveedores = proveedoresDatos.Obtener(PROVEEDORES_COD);
+            var oProveedores = proveedoresDatos.Obtener(id);
 
             return View();
         }
@@ -65,10 +65,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int PROVEEDORES_COD)
+        public IActionResult Eliminar(int id)
         {
-            var oProveedores = proveedoresDatos.Eliminar(PROVEEDORES_COD);
-
+            var oProveedores = proveedoresDatos.Eliminar(id);
             return View();
         }
 

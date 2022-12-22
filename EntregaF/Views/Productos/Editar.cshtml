@@ -41,7 +41,7 @@
             <span asp-validation-for="STOCK" class="text-denger"></span>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">Editar</button>
+            <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Productos">Editar</button>
             <a asp-action="Listar" asp-controller="Productos" class="btn btn-warning">Volver al listado</a>
         </div>
     </div>

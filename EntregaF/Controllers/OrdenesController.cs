@@ -37,9 +37,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int ORDENES_COD)
+        public IActionResult Editar(int id)
         {
-            var oOrdenes = ordenesDatos.Obtener(ORDENES_COD);
+            var oOrdenes = ordenesDatos.Obtener(id);
 
             return View();
         }
@@ -64,9 +64,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int ORDENES_COD)
+        public IActionResult Eliminar(int id)
         {
-            var oOrdenes = ordenesDatos.Eliminar(ORDENES_COD);
+            var oOrdenes = ordenesDatos.Eliminar(id);
 
             return View();
         }

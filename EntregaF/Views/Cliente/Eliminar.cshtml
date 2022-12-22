@@ -18,7 +18,9 @@
                 ¿Desea eliminar el contacto: @Html.DisplayTextFor(m => m.APELLIDO)?
             </div>
 
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-primary" asp-action="Eliminar" asp-controller="Cliente">
+                Eliminar
+            </button>
             <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>
         </form>
     </div>

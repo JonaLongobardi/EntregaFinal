@@ -18,7 +18,7 @@
                 ¿Desea eliminar la orden: @Html.DisplayTextFor(m => m.ORDENES_COD)?
             </div>
 
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-primary" asp-action="Eliminar" asp-controller="Ordenes">Eliminar</button>
             <a asp-action="Listar" asp-controller="Ordenes" class="btn btn-warning">Volver al listado</a>
         </form>
     </div>

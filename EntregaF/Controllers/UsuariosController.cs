@@ -38,9 +38,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int USUARIOS_CODIGO)
+        public IActionResult Editar(int id)
         {
-            var oUsuarios = usuariosDatos.Obtener(USUARIOS_CODIGO);
+            var oUsuarios = usuariosDatos.Obtener(id);
 
             return View();
         }
@@ -65,9 +65,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int USUARIOS_CODIGO)
+        public IActionResult Eliminar(int id)
         {
-            var oUsuarios = usuariosDatos.Eliminar(USUARIOS_CODIGO);
+            var oUsuarios = usuariosDatos.Eliminar(id);
 
             return View();
         }

@@ -24,7 +24,8 @@ namespace EntregaF.Datos
                         oLista.Add(new Usuarios()
                         {
                             USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]),
-                            PERFILES_CODIGO = Convert.ToInt32(dr["PERFILES_CODIGO"]),
+                            CORREO = dr["CORREO"].ToString(),
+                            CONTRASENIA = dr["CONTRASENIA"].ToString(),
                         });
                     }
                 }
@@ -49,7 +50,8 @@ namespace EntregaF.Datos
                     while (dr.Read())
                     {
                         oUsuarios.USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]);
-                        oUsuarios.PERFILES_CODIGO = Convert.ToInt32(dr["PERFILES_CODIGO"]);
+                        oUsuarios.CORREO = dr["CORREO"].ToString();
+                        oUsuarios.CONTRASENIA = dr["CONTRASENIA"].ToString();
                     }
                 }
             }
@@ -67,7 +69,8 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarUSUARIOS", connection);
-                    cmd.Parameters.AddWithValue("PERFILES_CODIGO", oUsuarios.PERFILES_CODIGO);
+                    cmd.Parameters.AddWithValue("CORREO", oUsuarios.CORREO);
+                    cmd.Parameters.AddWithValue("CONTRASENIA", oUsuarios.CONTRASENIA);
                 }
                 respuesta = true;
             }
@@ -90,7 +93,8 @@ namespace EntregaF.Datos
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarUSUARIOS", connection);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oUsuarios.USUARIOS_CODIGO);
-                    cmd.Parameters.AddWithValue("PERFILES_CODIGO", oUsuarios.PERFILES_CODIGO);
+                    cmd.Parameters.AddWithValue("CORREO", oUsuarios.CORREO);
+                    cmd.Parameters.AddWithValue("CONTRASENIA", oUsuarios.CONTRASENIA);
                 }
                 respuesta = true;
             }

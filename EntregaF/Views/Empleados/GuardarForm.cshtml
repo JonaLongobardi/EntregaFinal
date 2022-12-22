@@ -5,7 +5,7 @@
 }
 
 <h1>GuardarForm</h1>
-<form>
+<form asp-action="GuardarForm" asp-controller="Empleados">
     <div class="mb-3">
         <label class="form-label">Codigo empleados</label>
         <input asp-for="EMPLEADOS_CODIGO" type="number" class="form-control" />
@@ -37,6 +37,6 @@
         <input asp-for="USUARIOS_CODIGO" type="number" class="form-control" />
         <span asp-validation-for="USUARIOS_CODIGO" class="text-denger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary" asp-action="GuardarForm" asp-controller="Empleados">Guardar</button>
     <a asp-action="Listar" asp-controller="Empleados" class="btn btn-warning">Volver al listado</a>
 </form>

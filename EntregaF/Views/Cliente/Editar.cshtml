@@ -11,49 +11,43 @@
         Editar informacion del cliente
     </div>
     <div class="card-body">
-        <form asp-action="Editar" asp-controller="Cliente" method="post"></form>
-        <input asp-for="CLIENTES_COD" type="hidden" class="form-control" />
+        <form asp-action="Editar" asp-controller="Cliente" method="post">
+        <input asp-for="CLIENTES_COD" type="hidden" class="form-control"/>
 
-    <div class="mb-3">
-        <label class="form-label">Codigo cliente</label>
-        <input asp-for="CLIENTES_COD" type="number" class="form-control" />
-        <span asp-validation-for="CLIENTES_COD" class="text-denger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input asp-for="NOMBRE" type="text" class="form-control" />
-        <span asp-validation-for="NOMBRE" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Apellido</label>
-        <input asp-for="APELLIDO" type="text" class="form-control" />
-        <span asp-validation-for="APELLIDO" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Correo</label>
-        <input asp-for="CORREO" type="email" class="form-control" />
-        <span asp-validation-for="CORREO" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Tipo cliente</label>
-        <input asp-for="TIPO_CLIENTE" type="text" class="form-control" />
-        <span asp-validation-for="TIPO_CLIENTE" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">CUIT</label>
-        <input asp-for="CUIT_DNI" type="number" class="form-control" />
-        <span asp-validation-for="CUIT_DNI" class="text-denger"></span>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Razon social</label>
-        <input asp-for="RAZON_SOCIAL" type="text" class="form-control" />
-        <span asp-validation-for="RAZON_SOCIAL" class="text-denger"></span>
-    </div>
-    <div>
-        <button type="submit" class="btn btn-primary">Editar</button>
-        <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>
-    </div>
-    
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="NOMBRE" type="text" class="form-control" />
+                <span asp-validation-for="NOMBRE" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input asp-for="APELLIDO" type="text" class="form-control" />
+                <span asp-validation-for="APELLIDO" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input asp-for="CORREO" type="email" class="form-control" />
+                <span asp-validation-for="CORREO" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo cliente</label>
+                <input asp-for="TIPO_CLIENTE" type="text" class="form-control" />
+                <span asp-validation-for="TIPO_CLIENTE" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">CUIT</label>
+                <input asp-for="CUIT_DNI" type="number" class="form-control" />
+                <span asp-validation-for="CUIT_DNI" class="text-denger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Razon social</label>
+                <input asp-for="RAZON_SOCIAL" type="text" class="form-control" />
+                <span asp-validation-for="RAZON_SOCIAL" class="text-denger"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Cliente">Editar</button>
+                <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>
+            </div>
+        </form>
     </div>
 </div>

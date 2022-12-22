@@ -37,9 +37,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int PRODUCTOS_COD)
+        public IActionResult Editar(int id)
         {
-            var oProductos = productosDatos.Obtener(PRODUCTOS_COD);
+            var oProductos = productosDatos.Obtener(id);
 
             return View();
         }
@@ -62,9 +62,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int PRODUCTOS_COD)
+        public IActionResult Eliminar(int id)
         {
-            var oProductos = productosDatos.Eliminar(PRODUCTOS_COD);
+            var oProductos = productosDatos.Eliminar(id);
 
             return View();
         }

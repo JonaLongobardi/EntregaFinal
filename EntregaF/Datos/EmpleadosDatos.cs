@@ -26,8 +26,7 @@ namespace EntregaF.Datos
                             EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]),
                             NOMBRE = dr["NOMBRE"].ToString(),
                             APELLIDO = dr["APELLIDO"].ToString(),
-                            APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString(),
-                            TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]),
+                            TIPO_EMPLEADO = dr["TIPO_EMPLEADO"].ToString(),
                             USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]),
                         });
                     }
@@ -55,8 +54,7 @@ namespace EntregaF.Datos
                         oEmpleados.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_COD"]);
                         oEmpleados.NOMBRE = dr["NOMBRE"].ToString();
                         oEmpleados.APELLIDO = dr["APELLIDO"].ToString();
-                        oEmpleados.APELLIDO_SUPERVISOR = dr["APELLIDO_SUPERVISOR"].ToString();
-                        oEmpleados.TIPO_EMPLEADO = Convert.ToInt32(dr["TIPO_EMPLEADO"]);
+                        oEmpleados.TIPO_EMPLEADO = dr["TIPO_EMPLEADO"].ToString();
                         oEmpleados.USUARIOS_CODIGO = Convert.ToInt32(dr["USUARIOS_CODIGO"]);
                     }
                 }
@@ -77,7 +75,6 @@ namespace EntregaF.Datos
                     SqlCommand cmd = new SqlCommand("guardarEMPLEADOS", connection);
                     cmd.Parameters.AddWithValue("NOMBRE", oEmpleados.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
-                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
                     cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
                 }
@@ -104,7 +101,6 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("EMPLEADOS_CODIGO", oEmpleados.EMPLEADOS_CODIGO);
                     cmd.Parameters.AddWithValue("NOMBRE", oEmpleados.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
-                    cmd.Parameters.AddWithValue("APELLIDO_SUPERVISOR", oEmpleados.APELLIDO_SUPERVISOR);
                     cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
                 }

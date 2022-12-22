@@ -38,9 +38,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int PROMOCIONES_CODIGO)
+        public IActionResult Editar(int id)
         {
-            var oPromociones = promocionesDatos.Obtener(PROMOCIONES_CODIGO);
+            var oPromociones = promocionesDatos.Obtener(id);
 
             return View();
         }
@@ -63,9 +63,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int PROMOCIONES_CODIGO)
+        public IActionResult Eliminar(int id)
         {
-            var oPromociones = promocionesDatos.Eliminar(PROMOCIONES_CODIGO);
+            var oPromociones = promocionesDatos.Eliminar(id);
 
             return View();
         }

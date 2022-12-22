@@ -37,9 +37,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Editar(int EMPLEADOS_CODIGO)
+        public IActionResult Editar(int id)
         {
-            var oEmpleados = empleadosDatos.Obtener(EMPLEADOS_CODIGO);
+            var oEmpleados = empleadosDatos.Obtener(id);
 
             return View();
         }
@@ -62,9 +62,9 @@ namespace EntregaF.Controllers
             }
         }
 
-        public IActionResult Eliminar(int EMPLEADOS_CODIGO)
+        public IActionResult Eliminar(int id)
         {
-            var oEmpleados = empleadosDatos.Eliminar(EMPLEADOS_CODIGO);
+            var oEmpleados = empleadosDatos.Eliminar(id);
 
             return View();
         }

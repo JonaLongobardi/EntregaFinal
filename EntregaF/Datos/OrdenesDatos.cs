@@ -28,7 +28,7 @@ namespace EntregaF.Datos
                             FECHA_ENTREGA = dr["FECHA_ENTREGA"].ToString(),
                             VENDEDOR = dr["VENDEDOR"].ToString(),
                             CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]),
-                            EMPLEADOS_COD = Convert.ToInt32(dr["EMPLEADOS_COD"]),
+                            EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]),
 
                         });
                     }
@@ -57,7 +57,7 @@ namespace EntregaF.Datos
                         oOrdenes.VENDEDOR = dr["VENDEDOR"].ToString();
                         oOrdenes.FECHA_ENTREGA = dr["FECHA_ENTREGA"].ToString();
                         oOrdenes.CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]);
-                        oOrdenes.EMPLEADOS_COD = Convert.ToInt32(dr["EMPLEADOS_COD"]);
+                        oOrdenes.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]);
                     }
                 }
             }
@@ -78,7 +78,7 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
-                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_COD);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
                 }
                 respuesta = true;
             }
@@ -104,7 +104,7 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
-                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_COD);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
                 }
                 respuesta = true;
             }
