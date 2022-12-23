@@ -78,6 +78,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", oOrdenesProductos.PRODUCTOS_COD);
                     cmd.Parameters.AddWithValue("CANTIDADPRODUCTO", oOrdenesProductos.CANTIDADPRODUCTO);
                     cmd.Parameters.AddWithValue("PRECIOCOMPRA", oOrdenesProductos.PRECIOCOMPRA);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -104,6 +106,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", oOrdenesProductos.PRODUCTOS_COD);
                     cmd.Parameters.AddWithValue("CANTIDADPRODUCTO", oOrdenesProductos.CANTIDADPRODUCTO);
                     cmd.Parameters.AddWithValue("PRECIOCOMPRA", oOrdenesProductos.PRECIOCOMPRA);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

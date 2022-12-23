@@ -93,6 +93,8 @@ namespace EntregaF.Datos
                     SqlCommand cmd = new SqlCommand("editarCATEGORIAS", connection);
                     cmd.Parameters.AddWithValue("CATEGORIA_COD", oCategorias.CATEGORIA_COD);
                     cmd.Parameters.AddWithValue("DETALLE", oCategorias.DETALLE);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

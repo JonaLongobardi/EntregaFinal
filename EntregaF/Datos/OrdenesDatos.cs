@@ -58,6 +58,7 @@ namespace EntregaF.Datos
                         oOrdenes.FECHA_ENTREGA = dr["FECHA_ENTREGA"].ToString();
                         oOrdenes.CLIENTES_COD = Convert.ToInt32(dr["CLIENTES_COD"]);
                         oOrdenes.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]);
+                        
                     }
                 }
             }
@@ -79,6 +80,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
                     cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -105,6 +108,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
                     cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

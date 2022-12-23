@@ -74,6 +74,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("NOMBRE", oProveedores.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oProveedores.APELLIDO);
                     cmd.Parameters.AddWithValue("CUIT", oProveedores.CUIT);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -99,6 +101,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("NOMBRE", oProveedores.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oProveedores.APELLIDO);
                     cmd.Parameters.AddWithValue("CUIT", oProveedores.CUIT);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

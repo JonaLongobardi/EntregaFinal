@@ -115,6 +115,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("NOMBRE", oClientes.NOMBRE);
                     cmd.Parameters.AddWithValue("APELLIDO", oClientes.APELLIDO);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oClientes.USUARIOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

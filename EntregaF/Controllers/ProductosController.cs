@@ -41,7 +41,7 @@ namespace EntregaF.Controllers
         {
             var oProductos = productosDatos.Obtener(id);
 
-            return View();
+            return View(oProductos);
         }
         [HttpPost]
         public IActionResult Editar(Productos oProductos)

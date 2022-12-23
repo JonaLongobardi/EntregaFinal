@@ -42,9 +42,11 @@ namespace EntregaF.Controllers
         {
             var oPromociones = promocionesDatos.Obtener(id);
 
-            return View();
+            return View(oPromociones);
         }
+
         [HttpPost]
+        
         public IActionResult Editar(Promociones oPromociones)
         {
             if (!ModelState.IsValid)

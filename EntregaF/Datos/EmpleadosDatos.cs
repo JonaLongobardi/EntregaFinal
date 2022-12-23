@@ -77,6 +77,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
                     cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -103,6 +105,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("APELLIDO", oEmpleados.APELLIDO);
                     cmd.Parameters.AddWithValue("TIPO_EMPLEADO", oEmpleados.TIPO_EMPLEADO);
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oEmpleados.USUARIOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

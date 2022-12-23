@@ -71,6 +71,8 @@ namespace EntregaF.Datos
                     SqlCommand cmd = new SqlCommand("guardarUSUARIOS", connection);
                     cmd.Parameters.AddWithValue("CORREO", oUsuarios.CORREO);
                     cmd.Parameters.AddWithValue("CONTRASENIA", oUsuarios.CONTRASENIA);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -95,6 +97,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oUsuarios.USUARIOS_CODIGO);
                     cmd.Parameters.AddWithValue("CORREO", oUsuarios.CORREO);
                     cmd.Parameters.AddWithValue("CONTRASENIA", oUsuarios.CONTRASENIA);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

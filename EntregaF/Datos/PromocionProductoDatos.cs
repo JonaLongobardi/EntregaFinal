@@ -56,6 +56,7 @@ namespace EntregaF.Datos
                         oPromocionProducto.PRODUCTOS_COD = Convert.ToInt32(dr["PRODUCTOS_COD"]);
                         oPromocionProducto.FECHA_FINAL = dr["FECHA_FINAL"].ToString();
                         oPromocionProducto.FECHA_INICIO = dr["FECHA_INICIO"].ToString();
+                        
                     }
                 }
             }
@@ -77,6 +78,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", oPromocionProducto.PRODUCTOS_COD);
                     cmd.Parameters.AddWithValue("FECHA_FINAL", oPromocionProducto.FECHA_FINAL);
                     cmd.Parameters.AddWithValue("FECHA_INICIO", oPromocionProducto.FECHA_INICIO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -103,6 +106,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", oPromocionProducto.PRODUCTOS_COD);
                     cmd.Parameters.AddWithValue("FECHA_FINAL", oPromocionProducto.FECHA_FINAL);
                     cmd.Parameters.AddWithValue("FECHA_INICIO", oPromocionProducto.FECHA_INICIO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }

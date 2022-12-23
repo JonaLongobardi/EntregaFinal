@@ -53,6 +53,7 @@ namespace EntregaDef.Datos
                         oPromociones.PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_COD"]);
                         oPromociones.NOMBRE = dr["NOMBRE"].ToString();
                         oPromociones.DESCUENTO = Convert.ToInt32(dr["DESCUENTO"]);
+
                     }
                 }
             }
@@ -72,6 +73,8 @@ namespace EntregaDef.Datos
                     SqlCommand cmd = new SqlCommand("guardarPROMOCIONES", connection);
                     cmd.Parameters.AddWithValue("NOMBRE", oPromociones.NOMBRE);
                     cmd.Parameters.AddWithValue("DESCUENTO", oPromociones.DESCUENTO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -96,6 +99,8 @@ namespace EntregaDef.Datos
                     cmd.Parameters.AddWithValue("PROMOCIONES_COD", oPromociones.PROMOCIONES_COD);
                     cmd.Parameters.AddWithValue("NOMBRE", oPromociones.NOMBRE);
                     cmd.Parameters.AddWithValue("DESCUENTO", oPromociones.DESCUENTO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
