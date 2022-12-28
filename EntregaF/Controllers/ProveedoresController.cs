@@ -42,7 +42,7 @@ namespace EntregaF.Controllers
         {
             var oProveedores = proveedoresDatos.Obtener(id);
 
-            return View();
+            return View(oProveedores);
         }
 
         [HttpPost]

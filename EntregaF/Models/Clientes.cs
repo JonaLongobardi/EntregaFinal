@@ -3,7 +3,6 @@ namespace EntregaF.Models
 {
     public class Clientes
     {
-        [Key]
 
         public int CLIENTES_COD { get; set; }
 

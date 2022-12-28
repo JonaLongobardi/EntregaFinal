@@ -39,10 +39,15 @@
                 <input asp-for="RAZON_SOCIAL" type="text" class="form-control" />
                 <span asp-validation-for="RAZON_SOCIAL" class="text-denger"></span>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary" asp-action="Editar" asp-controller="Cliente">Editar</button>
-                <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>
+            <div class="mb-3">
+                <label class="form-label">Usuarios codigo</label>
+                <input asp-for="USUARIOS_CODIGO" type="number" class="form-control" />
+                <span asp-validation-for="USUARIOS_CODIGO" class="text-denger"></span>
             </div>
+            
+            <button asp-action="Editar" asp-controller="Cliente" type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Cliente" class="btn btn-warning">Volver al listado</a>
+            
         </form>
     </div>
 </div>

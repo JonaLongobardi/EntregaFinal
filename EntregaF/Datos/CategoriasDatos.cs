@@ -1,32 +1,30 @@
-﻿using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data;
 using EntregaF.Models;
-using EntregaF.Datos;
+using System.Data.SqlClient;
 
-namespace EntregaDef.Datos
+namespace EntregaF.Datos
 {
-    public class PromocionesDatos
+    public class CategoriasDatos
     {
-        public List<Promociones> Listar()
+        public List<Categorias> Listar()
         {
-            var oLista = new List<Promociones>();
+            var oLista = new List<Categorias>();
             var cn = new Conexion();
             using (var connection = new SqlConnection(cn.getCadenaSQL()))
             {
                 connection.Open();
 
-                SqlCommand cmd = new SqlCommand("mostrarPROMOCIONES", connection);
+                SqlCommand cmd = new SqlCommand("mostrarCATEGORIAS", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        oLista.Add(new Promociones()
+                        oLista.Add(new Categorias()
                         {
-                            PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_COD"]),
-                            NOMBRE = dr["NOMBRE"].ToString(),
-                            DESCUENTO = Convert.ToInt32(dr["DESCUENTO"]),
+                            CATEGORIA_COD = Convert.ToInt32(dr["CATEGORIA_COD"]),
+                            DETALLE = dr["DETALLE"].ToString(),
                         });
                     }
                 }
@@ -34,33 +32,31 @@ namespace EntregaDef.Datos
             return oLista;
         }
 
-        public Promociones Obtener(int PROMOCIONES_COD)
+        public Categorias Obtener(int CATEGORIA_COD)
         {
-            var oPromociones = new Promociones();
+            var oCategorias = new Categorias();
             var cn = new Conexion();
 
             using (var connection = new SqlConnection(cn.getCadenaSQL()))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("obtenerPROMOCIONES", connection);
-                cmd.Parameters.AddWithValue("PROMOCIONES_COD", PROMOCIONES_COD);
+                SqlCommand cmd = new SqlCommand("obtenerCATEGORIAS", connection);
+                cmd.Parameters.AddWithValue("CATEGORIA_COD", CATEGORIA_COD);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 using (var dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        oPromociones.PROMOCIONES_COD = Convert.ToInt32(dr["PROMOCIONES_COD"]);
-                        oPromociones.NOMBRE = dr["NOMBRE"].ToString();
-                        oPromociones.DESCUENTO = Convert.ToInt32(dr["DESCUENTO"]);
-
+                        oCategorias.CATEGORIA_COD = Convert.ToInt32(dr["CATEGORIA_COD"]);
+                        oCategorias.DETALLE = dr["DETALLE"].ToString();
                     }
                 }
             }
-            return oPromociones;
+            return oCategorias;
         }
 
-        public bool Guardar(Promociones oPromociones)
+        public bool Guardar(Categorias oCategorias)
         {
             bool respuesta;
 
@@ -70,9 +66,8 @@ namespace EntregaDef.Datos
                 using (var connection = new SqlConnection(cn.getCadenaSQL()))
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("guardarPROMOCIONES", connection);
-                    cmd.Parameters.AddWithValue("NOMBRE", oPromociones.NOMBRE);
-                    cmd.Parameters.AddWithValue("DESCUENTO", oPromociones.DESCUENTO);
+                    SqlCommand cmd = new SqlCommand("guardarCATEGORIAS", connection);
+                    cmd.Parameters.AddWithValue("DETALLE", oCategorias.DETALLE);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -85,7 +80,7 @@ namespace EntregaDef.Datos
             }
             return respuesta;
         }
-        public bool Editar(Promociones oPromociones)
+        public bool Editar(Categorias oCategorias)
         {
             bool respuesta;
 
@@ -95,10 +90,9 @@ namespace EntregaDef.Datos
                 using (var connection = new SqlConnection(cn.getCadenaSQL()))
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("editarPROMOCIONES", connection);
-                    cmd.Parameters.AddWithValue("PROMOCIONES_COD", oPromociones.PROMOCIONES_COD);
-                    cmd.Parameters.AddWithValue("NOMBRE", oPromociones.NOMBRE);
-                    cmd.Parameters.AddWithValue("DESCUENTO", oPromociones.DESCUENTO);
+                    SqlCommand cmd = new SqlCommand("editarCATEGORIAS", connection);
+                    cmd.Parameters.AddWithValue("CATEGORIA_COD", oCategorias.CATEGORIA_COD);
+                    cmd.Parameters.AddWithValue("DETALLE", oCategorias.DETALLE);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -111,7 +105,7 @@ namespace EntregaDef.Datos
             }
             return respuesta;
         }
-        public bool Eliminar(int PROMOCIONES_COD)
+        public bool Eliminar(int CATEGORIA_COD)
         {
             bool respuesta;
 
@@ -121,8 +115,8 @@ namespace EntregaDef.Datos
                 using (var connection = new SqlConnection(cn.getCadenaSQL()))
                 {
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("eliminarPROMOCIONES", connection);
-                    cmd.Parameters.AddWithValue("PROMOCIONES_COD", PROMOCIONES_COD);
+                    SqlCommand cmd = new SqlCommand("eliminarCATEGORIAS", connection);
+                    cmd.Parameters.AddWithValue("CATEGORIA_COD", CATEGORIA_COD);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

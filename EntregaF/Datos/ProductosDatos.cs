@@ -57,6 +57,7 @@ namespace EntregaF.Datos
                         oProductos.NOMBRE = dr["NOMBRE"].ToString();
                         oProductos.PRECIO = Convert.ToInt32(dr["PRECIO"]);
                         oProductos.STOCK = Convert.ToInt32(dr["STOCK"]);
+                        
                     }
                 }
             }
@@ -78,6 +79,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("NOMBRE", oProductos.NOMBRE);
                     cmd.Parameters.AddWithValue("PRECIO", oProductos.PRECIO);
                     cmd.Parameters.AddWithValue("STOCK", oProductos.STOCK);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -104,6 +107,8 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("NOMBRE", oProductos.NOMBRE);
                     cmd.Parameters.AddWithValue("PRECIO", oProductos.PRECIO);
                     cmd.Parameters.AddWithValue("STOCK", oProductos.STOCK);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
@@ -128,6 +133,7 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("PRODUCTOS_COD", PRODUCTOS_COD);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
+
                 }
                 respuesta = true;
             }

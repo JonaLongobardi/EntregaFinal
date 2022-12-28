@@ -41,7 +41,7 @@ namespace EntregaF.Controllers
         {
             var oOrdenes = ordenesDatos.Obtener(id);
 
-            return View();
+            return View(oOrdenes);
         }
 
         [HttpPost]

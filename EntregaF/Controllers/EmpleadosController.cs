@@ -41,7 +41,7 @@ namespace EntregaF.Controllers
         {
             var oEmpleados = empleadosDatos.Obtener(id);
 
-            return View();
+            return View(oEmpleados);
         }
         [HttpPost]
         public IActionResult Editar(Empleados oEmpleados)

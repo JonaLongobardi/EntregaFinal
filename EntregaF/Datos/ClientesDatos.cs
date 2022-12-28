@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using EntregaF.Models;
 using System.Data.SqlClient;
-using EntregaF.Datos;
+
 
 namespace EntregaF.Datos
 {
@@ -68,7 +68,7 @@ namespace EntregaF.Datos
             return oClientes;
         }
 
-        public bool Guardar(Clientes oCliente)
+        public bool Guardar(Clientes oClientes)
         {
             bool respuesta;
 
@@ -79,12 +79,12 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("guardarCLIENTES", connection);
-                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", "123");
-                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", "123");
-                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
-                    cmd.Parameters.AddWithValue("NOMBRE", oCliente.NOMBRE);
-                    cmd.Parameters.AddWithValue("APELLIDO", oCliente.APELLIDO);
-                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", 1);
+                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oClientes.TIPO_CLIENTE);
+                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oClientes.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("CUIT_DNI", oClientes.CUIT_DNI);
+                    cmd.Parameters.AddWithValue("NOMBRE", oClientes.NOMBRE);
+                    cmd.Parameters.AddWithValue("APELLIDO", oClientes.APELLIDO);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oClientes.USUARIOS_CODIGO);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();    
                 }
@@ -97,7 +97,7 @@ namespace EntregaF.Datos
             }
             return respuesta;
         }
-        public bool Editar(Clientes oCliente)
+        public bool Editar(Clientes oClientes)
         {
             bool respuesta;
 
@@ -108,13 +108,15 @@ namespace EntregaF.Datos
                 {
                     connection.Open();
                     SqlCommand cmd = new SqlCommand("editarCLIENTES", connection);
-                    cmd.Parameters.AddWithValue("CLIENTES_COD", oCliente.CLIENTES_COD);
-                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oCliente.TIPO_CLIENTE);
-                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oCliente.RAZON_SOCIAL);
-                    cmd.Parameters.AddWithValue("CUIT_DNI", oCliente.CUIT_DNI);
-                    cmd.Parameters.AddWithValue("NOMBRE", oCliente.NOMBRE);
-                    cmd.Parameters.AddWithValue("APELLIDO", oCliente.APELLIDO);
-                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oCliente.USUARIOS_CODIGO);
+                    cmd.Parameters.AddWithValue("CLIENTES_COD", oClientes.CLIENTES_COD);
+                    cmd.Parameters.AddWithValue("TIPO_CLIENTE", oClientes.TIPO_CLIENTE);
+                    cmd.Parameters.AddWithValue("RAZON_SOCIAL", oClientes.RAZON_SOCIAL);
+                    cmd.Parameters.AddWithValue("CUIT_DNI", oClientes.CUIT_DNI);
+                    cmd.Parameters.AddWithValue("NOMBRE", oClientes.NOMBRE);
+                    cmd.Parameters.AddWithValue("APELLIDO", oClientes.APELLIDO);
+                    cmd.Parameters.AddWithValue("USUARIOS_CODIGO", oClientes.USUARIOS_CODIGO);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
                 }
                 respuesta = true;
             }
