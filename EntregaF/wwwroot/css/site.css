@@ -16,3 +16,34 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    float: right;
+    bottom: 10px;
+    border: none solid black;
+}
+
+.nav-item {
+    font-size: 20px;
+    width: 165px;
+    height: 45px;
+    text-align: center;
+   
+}
+
+.dropdown {
+    font-size: 20px;
+    width: 165px;
+    height: 45px;
+    text-align: center;
+    
+}
+
+.btn {
+    font-size:20px;
+}

@@ -51,7 +51,7 @@ namespace EntregaF.Datos
                 {
                     while (dr.Read())
                     {
-                        oEmpleados.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_COD"]);
+                        oEmpleados.EMPLEADOS_CODIGO = Convert.ToInt32(dr["EMPLEADOS_CODIGO"]);
                         oEmpleados.NOMBRE = dr["NOMBRE"].ToString();
                         oEmpleados.APELLIDO = dr["APELLIDO"].ToString();
                         oEmpleados.TIPO_EMPLEADO = dr["TIPO_EMPLEADO"].ToString();

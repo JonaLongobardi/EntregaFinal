@@ -47,7 +47,7 @@ namespace EntregaF.Datos
             using (var connection = new SqlConnection(cn.getCadenaSQL()))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("obetenerUSUARIOS", connection);
+                SqlCommand cmd = new SqlCommand("obtenerUSUARIOS", connection);
                 cmd.Parameters.AddWithValue("USUARIOS_CODIGO", USUARIOS_CODIGO);
                 cmd.CommandType = CommandType.StoredProcedure;
 
