@@ -1,6 +1,12 @@
-﻿using System.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using EntregaF.Models;
+using EntregaF.Datos;
 using System.Data.SqlClient;
+using System.Data;
+using Microsoft.AspNetCore.Session;
+using System.Drawing;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace EntregaF.Datos
 {
@@ -129,5 +135,7 @@ namespace EntregaF.Datos
             }
             return respuesta;
         }
+
+        
     }
 }
