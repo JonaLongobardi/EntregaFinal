@@ -79,7 +79,7 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
-                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_CODIGO", oOrdenes.EMPLEADOS_CODIGO);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
@@ -107,7 +107,7 @@ namespace EntregaF.Datos
                     cmd.Parameters.AddWithValue("VENDEDOR", oOrdenes.VENDEDOR);
                     cmd.Parameters.AddWithValue("FECHA_ENTREGA", oOrdenes.FECHA_ENTREGA);
                     cmd.Parameters.AddWithValue("CLIENTES_COD", oOrdenes.CLIENTES_COD);
-                    cmd.Parameters.AddWithValue("EMPLEADOS_COD", oOrdenes.EMPLEADOS_CODIGO);
+                    cmd.Parameters.AddWithValue("EMPLEADOS_CODIGO", oOrdenes.EMPLEADOS_CODIGO);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }
