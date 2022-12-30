@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-chocolate border-bottom box-shadow mb-3" style="background-color: #a84f00">
             <div class="container-fluid flex-column ">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">QWatch</a>
+                <a class="navbar-brand nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Qtime</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,17 +20,11 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Acceso" asp-action="Logout">Cerrar Sesion</a>
-                        </li>
+                      
                         <li class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle nav-link text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu
                             </button>
                             <ul class="dropdown-menu aria-labelledby="dropdownMenuButton1">
@@ -49,6 +43,9 @@
                                 <li><a class="dropdown-item" asp-action="listar" asp-controller="Usuarios">Usuarios</a></li>    
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Acceso" asp-action="Logout">Cerrar Sesion</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -62,11 +59,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - EntregaF - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
