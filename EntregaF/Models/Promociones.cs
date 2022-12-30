@@ -6,7 +6,7 @@
 
         public string NOMBRE { get; set; }
 
-        public float DESCUENTO { get; set; }
+        public int DESCUENTO { get; set; }
 
     }
 }

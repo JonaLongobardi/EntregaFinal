@@ -43,7 +43,9 @@ namespace EntregaF.Controllers
 
             return View(oProductos);
         }
+
         [HttpPost]
+
         public IActionResult Editar(Productos oProductos)
         {
             if (!ModelState.IsValid)
@@ -68,7 +70,9 @@ namespace EntregaF.Controllers
 
             return View();
         }
+
         [HttpPost]
+
         public IActionResult Eliminar(Productos oProductos)
         {
             var respuesta = productosDatos.Editar(oProductos);

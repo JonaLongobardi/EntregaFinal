@@ -17,6 +17,7 @@ namespace EntregaF.Datos
 
                 SqlCommand cmd = new SqlCommand("mostrarORDENES", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
 
                 using (var dr = cmd.ExecuteReader())
                 {
@@ -48,6 +49,8 @@ namespace EntregaF.Datos
                 SqlCommand cmd = new SqlCommand("obtenerORDENES", connection);
                 cmd.Parameters.AddWithValue("ORDENES_COD", ORDENES_COD);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
 
                 using (var dr = cmd.ExecuteReader())
                 {

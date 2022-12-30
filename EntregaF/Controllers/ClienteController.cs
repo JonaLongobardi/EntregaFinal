@@ -62,7 +62,9 @@ namespace EntregaF.Controllers
 
             return View();
         }
+
         [HttpPost]
+
         public IActionResult Eliminar(Clientes oClientes)
         {
             var respuesta = clientesDatos.Editar(oClientes);
